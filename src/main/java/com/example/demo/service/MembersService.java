@@ -24,6 +24,8 @@ public class MembersService {
     public Members createMember(Members member) {
         return membersRepository.save(member);
     }
+
+    //使用orElse或option
     public Members updateMember(Long id, Members updatedMember) {
         return membersRepository.findById(id).map(existingMember -> {
             existingMember.setName(updatedMember.getName());
