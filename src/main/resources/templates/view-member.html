@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>會員詳情</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="my-4">會員詳情</h1>
+    <div>
+        <p><strong>姓名:</strong> <span th:text="${member.name}"></span></p>
+        <p><strong>電子信箱:</strong> <span th:text="${member.email}"></span></p>
+        <p><strong>電話:</strong> <span th:text="${member.phone}"></span></p>
+        <p><strong>地址:</strong> <span th:text="${member.address}"></span></p>
+    </div>
+    <a th:href="@{/members/edit/{id}(id=${member.id})}" class="btn btn-warning">編輯</a>
+    <form th:action="@{/members/delete/{id}(id=${member.id})}" method="post" style="display:inline;">
+        <button type="submit" class="btn btn-danger btn-sm">刪除</button>
+    </form>
+    <a href="/members" class="btn btn-secondary">返回會員列表</a>
+</div>
+</body>
+</html>
