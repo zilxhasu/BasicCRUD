@@ -57,7 +57,7 @@ public class MembersController {
         return "edit-member";
     }
 
-    // 更新會員 - 新增此方法
+    // 更新會員
     @PostMapping("/update/{id}")
     public String updateMember(@PathVariable Long id, @ModelAttribute Members member) {
         member.setId(id);
@@ -65,7 +65,7 @@ public class MembersController {
         return "redirect:/members";
     }
 
-    // 刪除會員 - 可以保持POST，但需要修改HTML文件
+    // 刪除會員
     @PostMapping("/delete/{id}")
     public String deleteMember(@PathVariable Long id) {
         membersService.deleteMember(id);
