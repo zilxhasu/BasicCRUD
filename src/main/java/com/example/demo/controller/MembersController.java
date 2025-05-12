@@ -46,7 +46,7 @@ public class MembersController {
         return "view-member";
     }
 
-    // 編輯會員頁面 - 改為GET方法
+    // 編輯會員頁面
     @GetMapping("/edit/{id}")
     public String editMemberForm(@PathVariable Long id, Model model) {
         Members member = membersService.getMemberById(id);
